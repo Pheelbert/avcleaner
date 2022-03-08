@@ -172,7 +172,7 @@ auto main(int argc, const char *argv[]) -> int {
     using namespace clang::tooling;
     using namespace ClSetup;
 
-    CommonOptionsParser OptionsParser(argc, argv, ToolCategory);
+    auto OptionsParser = CommonOptionsParser::create(argc, argv, ToolCategory);
     ClangTool Tool(OptionsParser.getCompilations(),
                    OptionsParser.getSourcePathList());
 
